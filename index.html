@@ -1,1 +1,189 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { createPageUrl } from "@/utils";
+import { ArrowRight, CheckCircle, Award, Users, BookOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
+export default function Home() {
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--navy-dark)] leading-tight mb-6">
+              Forensic toxicology expertise and laboratory consulting
+            </h1>
+            <p className="text-xl md:text-2xl text-[var(--grey)] leading-relaxed mb-8">
+              Expert witness, quality assurance assessor, and forensic laboratory consultant with over two decades of leadership experience.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to={createPageUrl("Services")}>
+                <Button className="bg-[var(--navy)] hover:bg-[var(--navy-light)] text-white px-8 py-6 text-lg rounded-lg h-auto">
+                  Explore Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to={createPageUrl("Contact")}>
+                <Button 
+                  variant="outline" 
+                  className="border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-blue-50 px-8 py-6 text-lg rounded-lg h-auto"
+                >
+                  Get in Touch
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bio Section */}
+      <section className="bg-white py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[var(--navy-dark)] mb-4">
+                About Jennifer Harmon
+              </h2>
+              <div className="w-20 h-1 bg-[var(--navy)]"></div>
+            </div>
+
+            <div className="prose prose-lg max-w-none">
+              <p className="text-lg text-[var(--grey-dark)] leading-relaxed mb-6">
+                Jennifer is a private forensic toxicology and forensic laboratory consultant, expert witness, quality assurance assessor with both ANAB and A2LA, and the Curriculum Manager for DrugImpairment.com. She has held the positions of Crime Laboratory Director and Assistant Director in two of the three most populous counties in California; both with populations exceeding more than 3.3M.
+              </p>
+              
+              <p className="text-lg text-[var(--grey-dark)] leading-relaxed mb-6">
+                As Director she oversaw a staff of nearly 90 in nine forensic disciplines and multiple budgets of more than $24M; implemented a team quality assurance strategy, brought new automated DNA processes online, and successfully stood up a full-service drug toxicology program where one did not exist. She additionally leveraged legislated fees to increase budget revenues, insured minimal to no findings in external quality assurance audits, and fully transitioned the laboratory to an automated records management system, LIMS. In addition, while serving in both San Diego and Orange Counties, Jennifer's teams were successfully awarded more than $14M in grant award funding of the $16M she proposed.
+              </p>
+
+              <p className="text-lg text-[var(--grey-dark)] leading-relaxed mb-6">
+                Jennifer has been in forensic science since 2000 and has more than 17 years of crime lab management and leadership experience with prior experience as the Orange County Crime Laboratory's Assistant Director over the Forensic Chemistry Bureau. In that position, Jennifer oversaw Toxicology, Forensic Alcohol, Controlled Substances, and Clandestine Laboratory Field Investigation operations. Under Jennifer's leadership, the Orange County Crime Laboratory's Forensic Chemistry Bureau incorporated Lean Six Sigma process improvements, obtained more than $2.5M in grant funding, and developed and implemented state-of-the-art technology and forensic methodology.
+              </p>
+
+              <p className="text-lg text-[var(--grey-dark)] leading-relaxed mb-8">
+                Jennifer is a technical expert in both post mortem and ante-mortem toxicology. She has testified in nearly 200 cases involving drugs, alcohol, and poly-drug use. Jennifer has presented over 125 times for professional organizations at the local, state, and national level including the California District Attorneys Association, Governors Highway Safety Association, International Association of Chiefs of Police, and the National Highway Traffic Safety Administration.
+              </p>
+
+              <div className="bg-slate-50 rounded-xl p-8 border border-gray-100 mb-8">
+                <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-6">
+                  Education & Career Foundation
+                </h3>
+                <div className="space-y-3 text-[var(--grey-dark)]">
+                  <p>
+                    <strong>Master's in Public Administration</strong><br />
+                    Brandman University, 2018
+                  </p>
+                  <p>
+                    <strong>Bachelor of Science in Biology (Physiology)</strong><br />
+                    Double minor in Chemistry and Political Science<br />
+                    California State University at Long Beach, 2001
+                  </p>
+                  <p className="text-base">
+                    Jennifer began her career in forensics as a volunteer intern with the Orange County Sheriff-Coroner Department, Coroner Division, and the Orange County Crime Laboratory.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements & Recognition Section */}
+      <section className="bg-slate-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--navy-dark)] mb-4">
+              Recognition & Leadership
+            </h2>
+            <div className="w-20 h-1 bg-[var(--navy)] mx-auto"></div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded-xl p-8 text-center border border-gray-100">
+              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-[var(--navy)]" />
+              </div>
+              <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-3">
+                NHTSA Award Recipient
+              </h3>
+              <p className="text-[var(--grey)]">
+                2018 National Highway Traffic Safety Administration's Public Service Award for improving forensic drug testing in California
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 text-center border border-gray-100">
+              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-[var(--navy)]" />
+              </div>
+              <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-3">
+                Leadership Positions
+              </h3>
+              <p className="text-[var(--grey)]">
+                Past president of the California Association of Crime Laboratory Directors and California Association of Toxicologists
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 text-center border border-gray-100">
+              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BookOpen className="h-8 w-8 text-[var(--navy)]" />
+              </div>
+              <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-3">
+                Legislative Impact
+              </h3>
+              <p className="text-[var(--grey)]">
+                Successfully co-authored three California bills (AB 551, SB 283, SB 925) improving drug testing in traffic safety cases
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-3xl mx-auto bg-white rounded-xl p-8 border border-gray-100">
+            <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-4">
+              Current Roles & Affiliations
+            </h3>
+            <ul className="space-y-3 text-[var(--grey-dark)]">
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <span>Faculty of the National Judicial College</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <span>Legislative Advisor for California Association of Toxicologists and California Association of Crime Laboratory Directors</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <span>Legislative Advocacy Committee, American Society of Crime Laboratory Directors</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <span>Member, International Association of Chiefs of Police Drug Evaluation and Classification Program's Technical Advisory Panel</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-[var(--navy)] flex-shrink-0 mt-0.5" />
+                <span>Curriculum Manager for DrugImpairment.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-br from-[var(--navy-dark)] to-[var(--navy)] text-white py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Need forensic toxicology expertise?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Expert witness testimony, laboratory consulting, and quality assurance services available.
+          </p>
+          <Link to={createPageUrl("Contact")}>
+            <Button className="bg-white text-[var(--navy)] hover:bg-gray-100 px-8 py-6 text-lg rounded-lg h-auto">
+              Schedule a Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
