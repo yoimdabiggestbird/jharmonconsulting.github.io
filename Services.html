@@ -1,0 +1,195 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { createPageUrl } from "@/utils";
+import { 
+  Microscope, 
+  Scale, 
+  ClipboardCheck, 
+  FileText, 
+  GraduationCap, 
+  Building2,
+  ArrowRight 
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const services = [
+  {
+    icon: Microscope,
+    title: "Forensic Toxicology Consulting",
+    description: "Expert consultation in both post mortem and ante-mortem toxicology. Technical expertise in forensic alcohol, controlled substances, and poly-drug use cases. Comprehensive analysis and interpretation of toxicological findings for legal proceedings."
+  },
+  {
+    icon: Scale,
+    title: "Expert Witness Services",
+    description: "Qualified expert witness testimony in criminal and civil cases involving drugs, alcohol, and poly-drug use. Over 200 cases of courtroom experience including testimony before California State Senate and Assembly Public Safety Committees, and the U.S. House of Representatives."
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Quality Assurance & Laboratory Accreditation",
+    description: "Quality assurance assessment services with both ANAB and A2LA. Over 14 years of experience as a technical assessor in testing and calibration. Support for laboratories seeking accreditation or maintaining compliance with forensic standards."
+  },
+  {
+    icon: Building2,
+    title: "Crime Laboratory Management & Operations",
+    description: "Strategic consulting for crime laboratory directors and management teams. Expertise in laboratory operations, budget management, staff development, and implementing quality assurance programs. Experience managing multi-million dollar budgets and laboratories with 90+ staff across nine forensic disciplines."
+  },
+  {
+    icon: FileText,
+    title: "Grant Writing & Funding Support",
+    description: "Proven track record securing over $14M in grant funding from state and federal partners. Assistance with grant proposal development, budget planning, and compliance for forensic laboratories and related organizations."
+  },
+  {
+    icon: GraduationCap,
+    title: "Training & Education",
+    description: "Professional training and presentations for law enforcement, legal professionals, and forensic scientists. Over 125 presentations delivered at local, state, and national levels. Curriculum development for forensic science and drug impairment education programs."
+  }
+];
+
+const specializations = [
+  "Post Mortem and Ante-Mortem Toxicology",
+  "Forensic Alcohol Analysis",
+  "Controlled Substances",
+  "Drug Recognition Evaluation (DRE) Program",
+  "Laboratory Information Management Systems (LIMS)",
+  "Quality Assurance & ISO/IEC 17025 Standards",
+  "Lean Six Sigma Process Improvements",
+  "Laboratory Automation & Technology Implementation",
+  "Legislative Advocacy & Policy Development",
+  "Traffic Safety & Drug Impairment Cases"
+];
+
+export default function Services() {
+  return (
+    <div>
+      {/* Header Section */}
+      <section className="bg-gradient-to-b from-slate-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--navy-dark)] mb-6">
+              Consulting Services
+            </h1>
+            <p className="text-xl text-[var(--grey)] leading-relaxed">
+              Comprehensive forensic toxicology and laboratory consulting services backed by over two decades of leadership experience in California's largest crime laboratories.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg hover:border-[var(--navy-light)] transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6">
+                  <service.icon className="h-7 w-7 text-[var(--navy)]" />
+                </div>
+                <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-[var(--grey)] leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Areas of Expertise */}
+      <section className="bg-slate-50 py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--navy-dark)] mb-4">
+              Areas of Expertise
+            </h2>
+            <div className="w-20 h-1 bg-[var(--navy)] mx-auto"></div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {specializations.map((item, index) => (
+              <div 
+                key={index}
+                className="bg-white rounded-lg p-6 border border-gray-100 flex items-start gap-4"
+              >
+                <div className="w-2 h-2 bg-[var(--navy)] rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-[var(--grey-dark)] font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Highlights */}
+      <section className="bg-white py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--navy-dark)] mb-4">
+              Experience Highlights
+            </h2>
+            <div className="w-20 h-1 bg-[var(--navy)] mx-auto"></div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-slate-50 rounded-xl p-8 border border-gray-100">
+              <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-3">
+                Crime Laboratory Leadership
+              </h3>
+              <p className="text-[var(--grey)] leading-relaxed">
+                Served as Crime Laboratory Director and Assistant Director in two of California's three most populous counties (San Diego and Orange), overseeing staff of nearly 90 in nine forensic disciplines with budgets exceeding $24M. Successfully implemented automated DNA processes, established full-service drug toxicology program, and transitioned laboratories to automated LIMS.
+              </p>
+            </div>
+
+            <div className="bg-slate-50 rounded-xl p-8 border border-gray-100">
+              <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-3">
+                Grant Funding Success
+              </h3>
+              <p className="text-[var(--grey)] leading-relaxed">
+                Secured more than $14M in grant award funding of the $16M proposed while serving in San Diego and Orange Counties. Additional $2.5M obtained for the Orange County Crime Laboratory's Forensic Chemistry Bureau from state and federal partners.
+              </p>
+            </div>
+
+            <div className="bg-slate-50 rounded-xl p-8 border border-gray-100">
+              <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-3">
+                Legislative & Policy Impact
+              </h3>
+              <p className="text-[var(--grey)] leading-relaxed">
+                Successfully co-authored legislation signed by Governor Newsom to improve testing and reporting of drug prevalence in fatally-injured traffic safety cases (AB 551, SB 283, and SB 925). Testified before California State Senate and Assembly Public Safety Committees and the U.S. House of Representatives' Subcommittee on Consumer Protection and Digital Commerce.
+              </p>
+            </div>
+
+            <div className="bg-slate-50 rounded-xl p-8 border border-gray-100">
+              <h3 className="text-xl font-semibold text-[var(--navy-dark)] mb-3">
+                Training & Professional Development
+              </h3>
+              <p className="text-[var(--grey)] leading-relaxed">
+                Delivered over 125 presentations for professional organizations including the California District Attorneys Association, Governors Highway Safety Association, International Association of Chiefs of Police, Indiana University's Borkenstein Drug Course, National Governors Association, and National Highway Traffic Safety Administration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-br from-[var(--navy-dark)] to-[var(--navy)] text-white py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Let's discuss your consulting needs
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Whether you need expert witness services, laboratory consulting, or quality assurance support, let's explore how I can help.
+          </p>
+          <Link to={createPageUrl("Contact")}>
+            <Button className="bg-white text-[var(--navy)] hover:bg-gray-100 px-8 py-6 text-lg rounded-lg h-auto">
+              Get in Touch
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
