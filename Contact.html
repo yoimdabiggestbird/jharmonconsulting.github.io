@@ -1,0 +1,222 @@
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Mail, Phone, Linkedin, CheckCircle } from "lucide-react";
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: ""
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Form submission will be handled by Firebase
+    console.log("Form data:", formData);
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  return (
+    <div>
+      {/* Header Section */}
+      <section className="bg-gradient-to-b from-slate-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--navy-dark)] mb-6">
+              Get in Touch
+            </h1>
+            <p className="text-xl text-[var(--grey)] leading-relaxed">
+              Let's start a conversation about how I can support your forensic toxicology and laboratory consulting needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Content */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-5 gap-16">
+            {/* Contact Information */}
+            <div className="lg:col-span-2 space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold text-[var(--navy-dark)] mb-8">
+                  Contact Information
+                </h2>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Phone className="h-5 w-5 text-[var(--navy)]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[var(--grey)] mb-1">Phone</p>
+                      <a 
+                        href="tel:+1234567890" 
+                        className="text-lg text-[var(--navy-dark)] hover:text-[var(--navy)] transition-colors"
+                      >
+                        (123) 456-7890
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="h-5 w-5 text-[var(--navy)]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[var(--grey)] mb-1">Email</p>
+                      <a 
+                        href="mailto:jennifer@jharmonconsulting.com" 
+                        className="text-lg text-[var(--navy-dark)] hover:text-[var(--navy)] transition-colors break-all"
+                      >
+                        jennifer@jharmonconsulting.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Linkedin className="h-5 w-5 text-[var(--navy)]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[var(--grey)] mb-1">LinkedIn</p>
+                      <a 
+                        href="https://www.linkedin.com/in/jenniferharmon" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg text-[var(--navy-dark)] hover:text-[var(--navy)] transition-colors"
+                      >
+                        Connect on LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 rounded-xl p-8 border border-gray-100">
+                <h3 className="text-lg font-semibold text-[var(--navy-dark)] mb-3">
+                  Office Hours
+                </h3>
+                <p className="text-[var(--grey)]">
+                  Monday - Friday: 9:00 AM - 5:00 PM PST<br />
+                  Weekend: By appointment only
+                </p>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="lg:col-span-3">
+              <div className="bg-white border border-gray-200 rounded-xl p-8 md:p-10">
+                <h2 className="text-2xl font-bold text-[var(--navy-dark)] mb-2">
+                  Send a Message
+                </h2>
+                <p className="text-[var(--grey)] mb-8">
+                  Fill out the form below and I'll get back to you within 24-48 hours.
+                </p>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="name" className="text-[var(--navy-dark)] mb-2 block">
+                        Full Name *
+                      </Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="h-12"
+                        placeholder="John Smith"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="email" className="text-[var(--navy-dark)] mb-2 block">
+                        Email Address *
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="h-12"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="phone" className="text-[var(--navy-dark)] mb-2 block">
+                        Phone Number
+                      </Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="h-12"
+                        placeholder="(123) 456-7890"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="company" className="text-[var(--navy-dark)] mb-2 block">
+                        Company
+                      </Label>
+                      <Input
+                        id="company"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        className="h-12"
+                        placeholder="Your Company"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="message" className="text-[var(--navy-dark)] mb-2 block">
+                      Message *
+                    </Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={6}
+                      placeholder="Tell me about your consulting needs..."
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-[var(--navy)] hover:bg-[var(--navy-light)] text-white h-12 text-base rounded-lg"
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
